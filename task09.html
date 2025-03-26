@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task09</title>
+
+  <script>
+
+    arrays();
+
+    function arrays() {
+      let input = prompt("Введите строку: ");
+      let symbol = prompt("Введите разделитель: ");
+      alert(split(input, symbol));
+    }
+
+    function split(string, symbol) {
+      let position;
+      let start = 0;
+      let strings = [];
+
+      do {
+        position = string.indexOf(symbol, start)
+
+        if (position === -1) {
+          strings.push(string.slice(start));
+        } else {
+          strings.push(string.slice(start, position));
+        }
+        start = position + 1;
+      }
+      while (position !== -1);
+      return strings;
+    }
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>
