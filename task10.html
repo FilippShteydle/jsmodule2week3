@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 10</title>
+
+    <script>
+
+        redaction("Today is %1 %2.%3.%4", "Monday", 10, 8, 2020);
+        redaction("Home %1 number %2 module %3 week %4 did on %5. %1 is %6, grade %2", "work", 5, 2, 3, "Tuesday", "Good");
+
+        function redaction() {
+            let string = arguments[0];
+            let count = arguments.length;
+            for (let i = 1; i < count; i++) {
+                while (string.indexOf('%' + i) !== -1) {
+                    string = string.replace('%' + i, arguments[i]);
+                }
+            }
+            console.log(string);
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
